@@ -1,0 +1,361 @@
+function calculate() {
+
+    const area =
+        Number(document.getElementById("area").value);
+
+    const repairType =
+        Number(document.getElementById("repairType").value);
+
+    const result =
+        document.getElementById("result");
+
+    const orderButton =
+        document.getElementById("orderCalculation");
+
+
+    if (!area || area <= 0) {
+
+        result.innerHTML =
+            "Введите площадь ванной комнаты.";
+
+        orderButton.style.display = "none";
+
+        return;
+    }
+
+
+    let price = 0;
+
+    let repairName = "";
+
+
+    if (repairType === 0) {
+
+        price = area * 3500;
+
+        repairName =
+            "Только укладка плитки";
+
+    }
+
+    else if (repairType === 1) {
+
+        price = area * 8500;
+
+        repairName =
+            "Капитальный ремонт";
+
+    }
+
+    else if (repairType === 2) {
+
+        price = area * 12000;
+
+        repairName =
+            "Ремонт под ключ";
+
+    }
+
+
+    let additionalWorks = [];
+
+
+    if (
+        document.getElementById("demolition").checked
+    ) {
+
+        price += area * 1200;
+
+        additionalWorks.push(
+            "Демонтаж старой плитки"
+        );
+
+    }
+
+
+    if (
+        document.getElementById("walls").checked
+    ) {
+
+        price += area * 1800;
+
+        additionalWorks.push(
+            "Выравнивание стен"
+        );
+
+    }
+
+
+    if (
+        document.getElementById("waterproofing").checked
+    ) {
+
+        price += area * 1000;
+
+        additionalWorks.push(
+            "Гидроизоляция"
+        );
+
+    }
+
+
+    if (
+        document.getElementById("floor").checked
+    ) {
+
+        price += area * 2500;
+
+        additionalWorks.push(
+            "Тёплый пол"
+        );
+
+    }
+
+
+    if (
+        document.getElementById("plumbing").checked
+    ) {
+
+        price += 15000;
+
+        additionalWorks.push(
+            "Монтаж сантехники"
+        );
+
+    }
+
+
+    if (
+        document.getElementById("grout").checked
+    ) {
+
+        price += area * 500;
+
+        additionalWorks.push(
+            "Затирка швов"
+        );
+
+    }
+
+
+    result.innerHTML =
+        "Предварительная стоимость: " +
+        price.toLocaleString("ru-RU") +
+        " ₽" +
+        "<br><small>" +
+        "Точная стоимость определяется после осмотра объекта." +
+        "</small>";
+
+
+    orderButton.style.display =
+        "block";
+
+
+    window.calculationData = {
+
+        area: area,
+
+        repairName: repairName,
+
+        additionalWorks:
+            additionalWorks,
+
+        price: price
+
+    };
+
+}
+
+function sendCalculationToForm() {
+
+    if (!window.calculationData) {
+
+        alert(
+            "Сначала выполните расчёт стоимости."
+        );
+
+        return;
+    }
+
+
+    const data =
+        window.calculationData;
+
+
+    const comment =
+        document.getElementById(
+            "clientComment"
+        );
+
+
+    let text =
+        "Хочу заказать ремонт по расчёту BARAKAT STROY16.\n\n";
+
+
+    text +=
+        "Площадь: " +
+        data.area +
+        " м²\n";
+
+
+    text +=
+        "Тип ремонта: " +
+        data.repairName +
+        "\n";
+
+
+    if (
+        data.additionalWorks.length > 0
+    ) {
+
+        text +=
+            "Дополнительные работы:\n";
+
+        data.additionalWorks.forEach(
+            function(work) {
+
+                text +=
+                    "• " +
+                    work +
+                    "\n";
+
+            }
+        );
+
+    }
+
+
+    text +=
+        "\nПредварительная стоимость: " +
+        data.price.toLocaleString("ru-RU") +
+        " ₽";
+
+
+    comment.value = text;
+
+
+    document
+        .getElementById("contacts")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+/* =================================
+   ФОРМА ЗАЯВКИ → WHATSAPP
+================================= */
+
+const form =
+    document.getElementById("contactForm");
+
+
+if (form) {
+
+    form.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById(
+                    "clientName"
+                ).value.trim();
+
+
+            const phone =
+                document.getElementById(
+                    "clientPhone"
+                ).value.trim();
+
+
+            const area =
+                document.getElementById(
+                    "clientArea"
+                ).value.trim();
+
+
+            const comment =
+                document.getElementById(
+                    "clientComment"
+                ).value.trim();
+
+
+            const message =
+                document.getElementById(
+                    "formMessage"
+                );
+
+
+            if (!name || !phone) {
+
+                message.innerHTML =
+                    "❗ Пожалуйста, укажите имя и телефон.";
+
+                return;
+            }
+
+
+            const whatsappText =
+                "Здравствуйте! Хочу заказать ремонт у BARAKAT STROY16.\n\n" +
+
+                "👤 Имя: " +
+                name +
+                "\n" +
+
+                "📞 Телефон: " +
+                phone +
+                "\n" +
+
+                "📐 Площадь: " +
+                (area || "не указана") +
+                " м²\n\n" +
+
+                "💬 Комментарий:\n" +
+                (comment || "не указан");
+
+
+            const whatsappUrl =
+                "https://wa.me/79673712725?text=" +
+                encodeURIComponent(
+                    whatsappText
+                );
+
+
+            message.innerHTML =
+                "💬 Открываем WhatsApp...";
+
+
+            window.open(
+                whatsappUrl,
+                "_blank"
+            );
+
+        }
+    );
+
+}
+
+function openImage(src) {
+
+    const modal =
+        document.getElementById("imageModal");
+
+    const image =
+        document.getElementById("modalImage");
+
+    image.src = src;
+
+    modal.style.display = "flex";
+}
+
+
+function closeImage() {
+
+    document.getElementById(
+        "imageModal"
+    ).style.display = "none";
+}
+
