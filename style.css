@@ -1,7 +1,7 @@
-/* =========================================
+/* =========================================================
    BARAKAT STROY16
-   ПРОФЕССИОНАЛЬНЫЙ ДИЗАЙН
-========================================= */
+   ОСНОВНЫЕ СТИЛИ САЙТА
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -15,29 +15,52 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f2ec;
+    background: #f8f8f8;
     color: #222;
     line-height: 1.6;
 }
 
-/* =========================================
-   ПЕРЕМЕННЫЕ
-========================================= */
+/* =========================================================
+   ОБЩИЕ ЭЛЕМЕНТЫ
+========================================================= */
 
-:root {
-    --dark: #111111;
-    --dark2: #1b1b1b;
-    --gold: #c99b3b;
-    --gold-dark: #a77e2f;
-    --cream: #f5f2ec;
-    --white: #ffffff;
-    --gray: #666666;
-    --green: #25D366;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* =========================================
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 25px;
+}
+
+.section > h2 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.section > p {
+    text-align: center;
+}
+
+/* =========================================================
    ШАПКА
-========================================= */
+========================================================= */
 
 .header {
     position: sticky;
@@ -46,34 +69,24 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
     gap: 25px;
 
-    padding: 15px 5%;
+    padding: 14px 35px;
 
-    background: rgba(17, 17, 17, 0.96);
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
 
-    color: white;
-
-    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
-
-    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
 }
-
-/* =========================================
-   ЛОГОТИП
-========================================= */
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 800;
-
-    letter-spacing: 1.5px;
+    color: #222;
 
     white-space: nowrap;
 }
@@ -81,1539 +94,308 @@ body {
 .logo img {
     width: 48px;
     height: 48px;
-
     object-fit: contain;
-
-    display: block;
 }
 
-.logo span {
-    color: var(--gold);
+.phone {
+    margin-left: auto;
 }
-
-/* =========================================
-   ТЕЛЕФОН
-========================================= */
 
 .phone a {
-    color: var(--gold);
-
-    text-decoration: none;
-
-    font-size: 17px;
-
     font-weight: bold;
-
-    transition: 0.3s;
+    color: #222;
+    transition: 0.2s;
 }
 
 .phone a:hover {
-    color: white;
+    color: #c99b3b;
 }
 
-/* =========================================
+/* =========================================================
    INSTAGRAM
-========================================= */
+========================================================= */
 
 .instagram a {
     display: flex;
     align-items: center;
-
     gap: 8px;
 
-    color: white;
-
-    text-decoration: none;
-
     font-weight: bold;
+    color: #444;
+
+    transition: 0.2s;
+}
+
+.instagram a:hover {
+    color: #c99b3b;
 }
 
 .instagram-icon {
     position: relative;
 
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
 
-    border: 3px solid #e1306c;
+    border: 2px solid currentColor;
+    border-radius: 7px;
 
-    border-radius: 8px;
-
-    display: inline-block;
-
-    transition: 0.3s;
+    display: block;
 }
 
 .instagram-camera {
     position: absolute;
 
-    width: 11px;
-    height: 11px;
+    width: 9px;
+    height: 9px;
 
-    border: 2px solid #e1306c;
-
+    border: 2px solid currentColor;
     border-radius: 50%;
 
-    left: 6px;
-    top: 6px;
+    left: 5px;
+    top: 5px;
 }
 
 .instagram-dot {
     position: absolute;
 
-    width: 4px;
-    height: 4px;
-
-    background: #e1306c;
+    width: 3px;
+    height: 3px;
 
     border-radius: 50%;
+    background: currentColor;
 
-    right: 4px;
-    top: 4px;
+    right: 3px;
+    top: 3px;
 }
 
-.instagram a:hover .instagram-icon {
-    transform: scale(1.12) rotate(5deg);
-}
+/* =========================================================
+   НАВИГАЦИЯ
+========================================================= */
 
-/* =========================================
-   МЕНЮ
-========================================= */
-
-nav {
+.header nav {
     display: flex;
-
     align-items: center;
-
-    gap: 22px;
+    gap: 18px;
 }
 
-nav a {
+.header nav a {
     position: relative;
 
-    color: white;
-
-    text-decoration: none;
-
     font-size: 14px;
-
     font-weight: 600;
 
-    transition: 0.3s;
+    color: #444;
+
+    transition: 0.2s;
 }
 
-nav a::after {
+.header nav a:hover {
+    color: #c99b3b;
+}
+
+.header nav a::after {
     content: "";
 
     position: absolute;
-
     left: 0;
-    bottom: -7px;
+    bottom: -5px;
 
     width: 0;
     height: 2px;
 
-    background: var(--gold);
+    background: #c99b3b;
 
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-nav a:hover {
-    color: var(--gold);
-}
-
-nav a:hover::after {
+.header nav a:hover::after {
     width: 100%;
 }
 
-/* =========================================
+/* =========================================================
    ГЛАВНЫЙ ЭКРАН
-========================================= */
+========================================================= */
 
 .hero {
-    min-height: 700px;
+    min-height: 620px;
 
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
-    padding: 70px 8%;
+    text-align: center;
 
-    position: relative;
+    padding: 80px 20px;
 
     background:
         linear-gradient(
-            90deg,
-            rgba(0,0,0,0.82),
-            rgba(0,0,0,0.52),
-            rgba(0,0,0,0.30)
+            rgba(0, 0, 0, 0.58),
+            rgba(0, 0, 0, 0.58)
         ),
-        url("images/bathroom.jpg");
-
-    background-size: cover;
-
-    background-position: center;
+        url("images/work1.jpg") center / cover no-repeat;
 }
 
 .hero-content {
-    max-width: 760px;
-
+    max-width: 850px;
     color: white;
-
-    animation: heroAppear 1s ease;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 6vw, 70px);
-
-    line-height: 1.05;
-
+    font-size: 58px;
+    line-height: 1.1;
     margin-bottom: 25px;
-
-    letter-spacing: -1px;
-}
-
-.hero h1::first-line {
-    color: white;
 }
 
 .hero p {
     font-size: 21px;
-
-    max-width: 650px;
-
     margin-bottom: 30px;
-
-    color: #eeeeee;
+    color: #f1f1f1;
 }
 
-/* =========================================
+/* =========================================================
    КНОПКИ
-========================================= */
+========================================================= */
 
 .button {
     display: inline-block;
 
-    padding: 16px 30px;
+    padding: 15px 30px;
 
-    background: var(--gold);
+    border-radius: 8px;
 
+    background: #c99b3b;
     color: white;
 
-    text-decoration: none;
-
-    border-radius: 6px;
-
+    font-size: 17px;
     font-weight: bold;
 
-    box-shadow: 0 8px 25px rgba(201,155,59,0.25);
-
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .button:hover {
-    background: var(--gold-dark);
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 12px 30px rgba(201,155,59,0.35);
+    background: #a77e2f;
+    transform: translateY(-2px);
 }
 
 .contact-buttons {
     display: flex;
+    justify-content: center;
+    gap: 12px;
 
-    gap: 15px;
-
-    margin-top: 20px;
-
-    flex-wrap: wrap;
+    margin-top: 18px;
 }
 
 .call-button,
 .whatsapp-button {
     display: inline-block;
 
-    padding: 14px 25px;
+    padding: 13px 22px;
 
-    border-radius: 6px;
-
-    text-decoration: none;
+    border-radius: 8px;
 
     font-weight: bold;
 
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .call-button {
-    background: var(--gold);
-
-    color: white;
+    background: white;
+    color: #222;
 }
 
 .whatsapp-button {
-    background: var(--green);
-
+    background: #25d366;
     color: white;
 }
 
 .call-button:hover,
 .whatsapp-button:hover {
-    transform: translateY(-3px);
-
-    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
-/* =========================================
-   СЕКЦИИ
-========================================= */
-
-.section {
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding: 90px 25px;
-}
-
-.section h2 {
-    text-align: center;
-
-    font-size: 40px;
-
-    margin-bottom: 45px;
-
-    color: var(--dark);
-
-    letter-spacing: -0.5px;
-}
-
-.section h2::after {
-    content: "";
-
-    display: block;
-
-    width: 55px;
-    height: 3px;
-
-    margin: 14px auto 0;
-
-    background: var(--gold);
-
-    border-radius: 10px;
-}
-
-/* =========================================
+/* =========================================================
    УСЛУГИ
-========================================= */
+========================================================= */
 
 .cards {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 25px;
+
+    margin-top: 40px;
 }
 
 .card {
+    padding: 35px 25px;
+
     background: white;
 
-    padding: 38px 30px;
-
-    border-radius: 14px;
+    border-radius: 15px;
 
     text-align: center;
 
-    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-
-    border: 1px solid rgba(0,0,0,0.04);
-
-    transition: 0.35s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-
-    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-.icon {
-    font-size: 48px;
-
-    margin-bottom: 18px;
-}
-
-.card h3 {
-    font-size: 23px;
-
-    margin-bottom: 15px;
-}
-
-.card p {
-    color: var(--gray);
-}
-
-/* =========================================
-   КАЛЬКУЛЯТОР
-========================================= */
-
-.calculator {
-    background: white;
-
-    border-radius: 18px;
-
-    margin-top: 30px;
-
-    margin-bottom: 30px;
-
-    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-}
-
-.calculator p {
-    text-align: center;
-
-    margin-bottom: 25px;
-
-    color: var(--gray);
-}
-
-.calculator label {
-    display: block;
-
-    max-width: 550px;
-
-    margin: 15px auto 6px;
-
-    font-weight: bold;
-}
-
-.calculator input,
-.calculator select {
-    display: block;
-
-    width: 100%;
-
-    max-width: 550px;
-
-    margin: auto;
-
-    padding: 15px;
-
-    border: 1px solid #d7d7d7;
-
-    border-radius: 7px;
-
-    font-size: 16px;
-
-    outline: none;
-
-    transition: 0.3s;
-}
-
-.calculator input:focus,
-.calculator select:focus {
-    border-color: var(--gold);
-
-    box-shadow: 0 0 0 3px rgba(201,155,59,0.12);
-}
-
-.calculator button {
-    display: block;
-
-    margin: 25px auto 0;
-
-    padding: 15px 35px;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background: var(--gold);
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.calculator button:hover {
-    background: var(--gold-dark);
-
-    transform: translateY(-2px);
-}
-
-#result {
-    text-align: center;
-
-    margin-top: 25px;
-
-    font-size: 25px;
-
-    font-weight: bold;
-
-    color: var(--gold-dark);
-}
-
-.calc-title {
-    max-width: 550px;
-
-    margin: 30px auto 15px;
-}
-
-.check {
-    display: block;
-
-    max-width: 550px;
-
-    margin: 10px auto;
-
-    padding: 12px;
-
-    background: var(--cream);
-
-    border-radius: 7px;
-
-    cursor: pointer;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
 
     transition: 0.25s;
 }
 
-.check:hover {
-    background: #eee8dc;
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.12);
 }
 
-.check input {
-    width: auto;
-
-    margin-right: 10px;
-}
-
-/* =========================================
-   НАШИ РАБОТЫ
-========================================= */
-
-.works-subtitle {
-    text-align: center;
-
-    margin-top: -30px;
-
-    margin-bottom: 40px;
-
-    color: var(--gray);
-}
-
-.works {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.work {
-    background: white;
-
-    border-radius: 14px;
-
-    overflow: hidden;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-
-    transition: 0.35s;
-}
-
-.work:hover {
-    transform: translateY(-7px);
-
-    box-shadow: 0 15px 35px rgba(0,0,0,0.13);
-}
-
-.work img {
-    width: 100%;
-
-    height: 260px;
-
-    object-fit: cover;
-
-    display: block;
-
-    cursor: pointer;
-
-    transition: 0.5s;
-}
-
-.work:hover img {
-    transform: scale(1.04);
-}
-
-.work h3 {
-    padding: 18px;
-
-    font-size: 19px;
-}
-
-/* =========================================
-   ОТЗЫВЫ
-========================================= */
-
-.reviews {
-    max-width: 900px;
-}
-
-.review {
-    background: white;
-
-    padding: 30px;
-
-    margin-bottom: 20px;
-
-    border-radius: 14px;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-
-    border-left: 4px solid var(--gold);
-}
-
-.stars {
-    color: var(--gold);
-
-    font-size: 22px;
-
-    margin-bottom: 5px;
-}
-
-.review p {
-    color: var(--gray);
-}
-
-/* =========================================
-   ФОРМА
-========================================= */
-
-.request {
-    text-align: center;
-}
-
-.request p {
-    margin-bottom: 25px;
-
-    color: var(--gray);
-}
-
-form {
-    max-width: 600px;
-
-    margin: auto;
-}
-
-form input,
-form textarea {
-    width: 100%;
-
-    padding: 16px;
-
+.card .icon {
+    font-size: 45px;
     margin-bottom: 15px;
-
-    border: 1px solid #d7d7d7;
-
-    border-radius: 7px;
-
-    font-size: 16px;
-
-    outline: none;
-
-    transition: 0.3s;
 }
 
-form input:focus,
-form textarea:focus {
-    border-color: var(--gold);
-
-    box-shadow: 0 0 0 3px rgba(201,155,59,0.12);
-}
-
-form textarea {
-    height: 130px;
-
-    resize: vertical;
-}
-
-form button {
-    padding: 16px 35px;
-
-    background: var(--green);
-
-    color: white;
-
-    border: none;
-
-    border-radius: 7px;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-form button:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 8px 20px rgba(37,211,102,0.25);
-}
-
-/* =========================================
-   КАРТА
-========================================= */
-
-.map {
-    height: 350px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #ddd;
-
-    border-radius: 12px;
-
-    color: #666;
-
-    font-weight: bold;
-}
-
-/* =========================================
-   МОДАЛЬНОЕ ОКНО ФОТО
-========================================= */
-
-.image-modal {
-    display: none;
-
-    position: fixed;
-
-    z-index: 5000;
-
-    left: 0;
-    top: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0,0,0,0.93);
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 30px;
-}
-
-.image-modal img {
-    max-width: 95%;
-
-    max-height: 90%;
-
-    object-fit: contain;
-
-    border-radius: 5px;
-}
-
-.close-modal {
-    position: absolute;
-
-    top: 15px;
-    right: 30px;
-
-    color: white;
-
-    font-size: 50px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.close-modal:hover {
-    color: var(--gold);
-}
-
-/* =========================================
-   ПОДВАЛ
-========================================= */
-
-footer {
-    background: var(--dark);
-
-    color: white;
-
-    text-align: center;
-
-    padding: 45px 20px;
-}
-
-footer .logo {
+.card h3 {
     margin-bottom: 10px;
+    font-size: 22px;
 }
 
-footer p {
-    color: #bbb;
-
-    margin-top: 5px;
+.card p {
+    color: #666;
 }
 
-/* =========================================
-   АНИМАЦИЯ
-========================================= */
-
-@keyframes heroAppear {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-
-}
-
-/* =========================================
-   МОБИЛЬНАЯ ВЕРСИЯ
-========================================= */
-
-@media (max-width: 900px) {
-
-    .header {
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 12px;
-
-        padding: 14px 15px;
-    }
-
-    .logo {
-        width: 100%;
-
-        text-align: center;
-    }
-
-    nav {
-        gap: 13px;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-    .phone {
-        order: 2;
-    }
-
-    .instagram {
-        order: 3;
-    }
-
-    nav {
-        order: 4;
-    }
-
-    .hero {
-        min-height: 600px;
-
-        padding: 50px 25px;
-
-        background-position: center;
-    }
-
-    .hero-content {
-        text-align: center;
-
-        margin: auto;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-    }
-
-    .hero p {
-        font-size: 18px;
-    }
-
-    .contact-buttons {
-        justify-content: center;
-    }
-
-    .cards,
-    .works {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 65px 20px;
-    }
-
-    .section h2 {
-        font-size: 32px;
-    }
-
-}
-
-/* =========================================
-   МАЛЕНЬКИЕ ТЕЛЕФОНЫ
-========================================= */
-
-@media (max-width: 500px) {
-
-    .header {
-        position: relative;
-    }
-
-    .logo {
-        font-size: 21px;
-    }
-
-    nav {
-        gap: 10px;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    .phone a {
-        font-size: 15px;
-    }
-
-    .instagram-text {
-        display: none;
-    }
-
-    .hero {
-        min-height: 620px;
-
-        padding: 45px 18px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-    .button,
-    .call-button,
-    .whatsapp-button {
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .section {
-        padding: 55px 15px;
-    }
-
-    .section h2 {
-        font-size: 28px;
-    }
-
-    .calculator {
-        border-radius: 12px;
-    }
-
-    .work img {
-        height: 230px;
-    }
-
-    form button {
-        width: 100%;
-    }
-
-}
-
-/* =================================
-   ПОЧЕМУ ВЫБИРАЮТ НАС
-================================= */
-
-.advantages {
-    background: #111;
-    max-width: none;
-
-    padding-left: 8%;
-    padding-right: 8%;
-
-    color: white;
-}
-
-.advantages h2 {
-    color: white;
-}
-
-.advantages-subtitle {
-    max-width: 650px;
-
-    margin: -20px auto 45px;
-
-    text-align: center;
-
-    color: #bbb;
-
-    font-size: 18px;
-}
-
-.advantages-grid {
-    max-width: 1150px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.advantage {
-    padding: 30px;
-
-    background: #1b1b1b;
-
-    border: 1px solid
-        rgba(201,155,59,0.15);
-
-    border-radius: 14px;
-
-    transition: 0.35s;
-}
-
-.advantage:hover {
-    transform: translateY(-8px);
-
-    border-color:
-        rgba(201,155,59,0.55);
-
-    box-shadow:
-        0 15px 35px
-        rgba(0,0,0,0.35);
-}
-
-.advantage-icon {
-    font-size: 42px;
-
-    margin-bottom: 15px;
-}
-
-.advantage h3 {
-    font-size: 21px;
-
-    margin-bottom: 10px;
-
-    color: var(--gold);
-}
-
-.advantage p {
-    color: #ccc;
-
-    line-height: 1.7;
-}
-
-
-/* МОБИЛЬНАЯ ВЕРСИЯ */
-
-@media (max-width: 900px) {
-
-    .advantages {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .advantages-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-/* =========================================
-   ПРОФЕССИОНАЛЬНАЯ МОБИЛЬНАЯ ВЕРСИЯ
-========================================= */
-
-@media (max-width: 700px) {
-
-    /* ШАПКА */
-
-    .header {
-        position: sticky;
-        top: 0;
-
-        display: flex;
-        flex-direction: column;
-
-        gap: 10px;
-
-        padding: 12px 15px;
-    }
-
-    .logo {
-        justify-content: center;
-
-        font-size: 19px;
-
-        letter-spacing: 1px;
-    }
-
-    .logo img {
-        width: 42px;
-        height: 42px;
-    }
-
-    .phone a {
-        font-size: 15px;
-    }
-
-    .instagram {
-        display: none;
-    }
-
-    /* МЕНЮ */
-
-    nav {
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 6px;
-    }
-
-    nav a {
-        text-align: center;
-
-        padding: 7px 3px;
-
-        font-size: 12px;
-
-        background: #1b1b1b;
-
-        border-radius: 5px;
-    }
-
-    nav a::after {
-        display: none;
-    }
-
-    /* ГЛАВНЫЙ ЭКРАН */
-
-    .hero {
-        min-height: calc(100vh - 145px);
-
-        padding: 50px 18px;
-
-        display: flex;
-
-        align-items: center;
-
-        text-align: center;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero-logo {
-        margin-bottom: 20px;
-    }
-
-    .hero-logo img {
-        width: 90px;
-        height: 90px;
-
-        margin: auto;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-
-        line-height: 1.08;
-
-        margin-bottom: 20px;
-    }
-
-    .hero p {
-        font-size: 17px;
-
-        line-height: 1.5;
-
-        margin-bottom: 25px;
-    }
-
-    /* КНОПКИ */
-
-    .contact-buttons {
-        width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 10px;
-
-        margin-top: 15px;
-    }
-
-    .button,
-    .call-button,
-    .whatsapp-button {
-        width: 100%;
-
-        text-align: center;
-
-        padding: 15px;
-    }
-
-    /* СЕКЦИИ */
-
-    .section {
-        width: 100%;
-
-        padding: 55px 15px;
-    }
-
-    .section h2 {
-        font-size: 29px;
-
-        line-height: 1.2;
-
-        margin-bottom: 35px;
-    }
-
-    /* УСЛУГИ */
-
-    .cards {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .card {
-        padding: 30px 20px;
-    }
-
-    .card h3 {
-        font-size: 21px;
-    }
-
-    /* ПРЕИМУЩЕСТВА */
-
-    .advantages {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .advantages-grid {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .advantage {
-        padding: 25px 20px;
-    }
-
-    /* КАЛЬКУЛЯТОР */
-
-    .calculator {
-        margin: 15px 0;
-
-        border-radius: 12px;
-
-        padding: 35px 18px;
-    }
-
-    .calculator input,
-    .calculator select {
-        width: 100%;
-
-        font-size: 16px;
-    }
-
-    .calculator button {
-        width: 100%;
-    }
-
-    .check {
-        padding: 13px;
-
-        font-size: 15px;
-    }
-
-    /* НАШИ РАБОТЫ */
-
-    .works {
-        grid-template-columns: 1fr;
-
-        gap: 18px;
-    }
-
-    .work img {
-        height: 240px;
-    }
-
-    /* ОТЗЫВЫ */
-
-    .review {
-        padding: 25px 20px;
-    }
-
-    /* ФОРМА */
-
-    form {
-        width: 100%;
-    }
-
-    form input,
-    form textarea {
-        font-size: 16px;
-
-        padding: 15px;
-    }
-
-    form button {
-        width: 100%;
-
-        padding: 16px;
-    }
-
-    /* КАРТА */
-
-    .map {
-        height: 300px;
-    }
-
-    /* ФОТО */
-
-    .image-modal {
-        padding: 10px;
-    }
-
-    .image-modal img {
-        max-width: 100%;
-
-        max-height: 85%;
-    }
-
-    .close-modal {
-        top: 10px;
-
-        right: 18px;
-
-        font-size: 42px;
-    }
-
-    /* FOOTER */
-
-    footer {
-        padding: 35px 15px;
-    }
-
-    footer .logo {
-        justify-content: center;
-    }
-
-}
-
-/* =========================================
-   ПЛАВАЮЩИЙ WHATSAPP
-========================================= */
-
-.floating-whatsapp {
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 62px;
-    height: 62px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #25D366;
-
-    color: white;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    font-size: 30px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
-
-    z-index: 3000;
-
-    transition: 0.3s;
-
-    animation: whatsappPulse 2.2s infinite;
-}
-
-.floating-whatsapp:hover {
-    transform: scale(1.12);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.35);
-}
-
-@keyframes whatsappPulse {
-
-    0% {
-        box-shadow:
-            0 0 0 0 rgba(37,211,102,0.55);
-    }
-
-    70% {
-        box-shadow:
-            0 0 0 14px rgba(37,211,102,0);
-    }
-
-    100% {
-        box-shadow:
-            0 0 0 0 rgba(37,211,102,0);
-    }
-
-}
-
-@media (max-width: 500px) {
-
-    .floating-whatsapp {
-        width: 56px;
-        height: 56px;
-
-        right: 16px;
-        bottom: 16px;
-
-        font-size: 27px;
-    }
-
-}
-/* =========================================
-   ОПИСАНИЕ РАБОТ
-========================================= */
-
-.work h3 {
-    padding: 18px 18px 5px;
-
-    font-size: 19px;
-
-    color: #222;
-}
-
-.work-description {
-    padding: 0 18px 20px;
-
-    color: #777;
-
-    font-size: 14px;
-}
-
-/* ЭФФЕКТ ФОТО */
-
-.work {
-    position: relative;
-}
-
-.work img {
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
-}
-
-.work:hover img {
-    transform: scale(1.05);
-
-    filter: brightness(0.9);
-}
-
-/* =========================================
-   МОБИЛЬНАЯ ГАЛЕРЕЯ
-========================================= */
-
-@media (max-width: 700px) {
-
-    .works {
-        gap: 20px;
-    }
-
-    .work img {
-        height: 250px;
-    }
-
-    .work h3 {
-        font-size: 18px;
-    }
-
-    .work-description {
-        font-size: 14px;
-    }
-
-}
-/* =========================================
+/* =========================================================
    О КОМПАНИИ
-========================================= */
+========================================================= */
 
 .about {
-    background: #f5f2ec;
+    background: #ffffff;
+    max-width: none;
+    padding-left: max(25px, calc((100% - 1150px) / 2));
+    padding-right: max(25px, calc((100% - 1150px) / 2));
 }
 
 .about-content {
-    max-width: 1050px;
-
-    margin: auto;
-
     display: grid;
 
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
-    gap: 60px;
+    gap: 55px;
+
+    margin-top: 40px;
 
     align-items: center;
-}
-
-.about-text {
-    font-size: 17px;
-
-    color: #555;
-}
-
-.about-lead {
-    font-size: 22px;
-
-    line-height: 1.5;
-
-    color: #222;
-
-    margin-bottom: 20px;
 }
 
 .about-text p {
     margin-bottom: 18px;
+    color: #555;
+}
+
+.about-lead {
+    font-size: 21px;
+    color: #333 !important;
 }
 
 .about-button {
@@ -1621,335 +403,113 @@ footer p {
 
     margin-top: 10px;
 
-    padding: 14px 25px;
+    padding: 13px 22px;
 
     background: #c99b3b;
-
     color: white;
 
-    text-decoration: none;
-
-    border-radius: 6px;
+    border-radius: 7px;
 
     font-weight: bold;
-
-    transition: 0.3s;
 }
-
-.about-button:hover {
-    background: #a77e2f;
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================================
-   ПРЕИМУЩЕСТВА В БЛОКЕ О КОМПАНИИ
-========================================= */
 
 .about-features {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
+    display: grid;
+    gap: 18px;
 }
 
 .about-feature {
     display: flex;
-
-    align-items: center;
-
-    gap: 18px;
+    gap: 15px;
 
     padding: 20px;
-
-    background: white;
 
     border-radius: 12px;
 
-    box-shadow:
-        0 7px 25px rgba(0,0,0,0.06);
-
-    transition: 0.3s;
-}
-
-.about-feature:hover {
-    transform: translateX(6px);
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,0.1);
+    background: #f8f6f1;
 }
 
 .about-feature-icon {
-    min-width: 50px;
-
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #f5f2ec;
-
-    border-radius: 10px;
-
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .about-feature h3 {
-    font-size: 18px;
-
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 .about-feature p {
-    color: #777;
-
-    font-size: 14px;
-}
-
-
-/* =========================================
-   МОБИЛЬНАЯ ВЕРСИЯ
-========================================= */
-
-@media (max-width: 800px) {
-
-    .about-content {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-    .about-lead {
-        font-size: 20px;
-    }
-
-    .about-text {
-        font-size: 16px;
-    }
-
-    .about-button {
-        width: 100%;
-
-        text-align: center;
-    }
-
-}
-#orderCalculation {
-    display: block;
-    margin: 20px auto 0;
-    padding: 15px 30px;
-
-    border: none;
-    border-radius: 6px;
-
-    background: #25D366;
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-#orderCalculation:hover {
-    background: #1ebe5d;
-    transform: translateY(-2px);
-}
-/* =========================
-   ОТЗЫВЫ — ДОБАВЛЕНИЕ
-========================= */
-
-.reviews-subtitle {
-    text-align: center;
     color: #666;
-    margin-top: -30px;
+}
+
+/* =========================================================
+   ПРЕИМУЩЕСТВА
+========================================================= */
+
+.advantages {
+    background: #f5f2ec;
+    max-width: none;
+
+    padding-left: max(25px, calc((100% - 1150px) / 2));
+    padding-right: max(25px, calc((100% - 1150px) / 2));
+}
+
+.advantages-subtitle {
+    color: #666;
     margin-bottom: 40px;
 }
 
-.review-add {
-    background: white;
-    padding: 35px;
-    margin-top: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.advantages-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
 }
 
-.review-add h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.review-add p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.review-button {
-    padding: 14px 30px;
-    border: none;
-    border-radius: 5px;
-    background: #c99b3b;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.review-button:hover {
-    background: #a77e2f;
-}
-
-
-/* =========================
-   ОКНО ОТЗЫВА
-========================= */
-
-.review-modal {
-    display: none;
-
-    position: fixed;
-
-    z-index: 6000;
-
-    left: 0;
-    top: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0,0,0,0.75);
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.review-modal-content {
-    position: relative;
-
-    width: 100%;
-    max-width: 550px;
-
-    max-height: 90vh;
-
-    overflow-y: auto;
+.advantage {
+    padding: 30px 22px;
 
     background: white;
 
-    border-radius: 15px;
+    border-radius: 14px;
 
-    padding: 35px;
+    text-align: center;
 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.review-modal-content h2 {
-    text-align: center;
-    margin-bottom: 15px;
+.advantage-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 
-.review-modal-content p {
-    text-align: center;
+.advantage h3 {
+    margin-bottom: 8px;
+}
+
+.advantage p {
     color: #666;
-    margin-bottom: 25px;
 }
 
-.review-modal-content input,
-.review-modal-content select,
-.review-modal-content textarea {
-    width: 100%;
-
-    padding: 14px;
-
-    margin-bottom: 15px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 5px;
-
-    font-size: 16px;
-
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.review-modal-content textarea {
-    resize: vertical;
-}
-
-.review-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 7px;
-}
-
-.review-close {
-    position: absolute;
-
-    top: 10px;
-    right: 20px;
-
-    font-size: 40px;
-
-    color: #555;
-
-    cursor: pointer;
-}
-
-.review-close:hover {
-    color: #000;
-}
-
-.review-send-button {
-    width: 100%;
-
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 5px;
-
-    background: #25D366;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.review-send-button:hover {
-    opacity: 0.85;
-}
-
-#reviewMessage {
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bold;
-}
-/* =========================================
-   НОВЫЙ КАЛЬКУЛЯТОР — BARAKAT STROY16
-========================================= */
+/* =========================================================
+   КАЛЬКУЛЯТОР
+========================================================= */
 
 .calculator {
-    max-width: 900px;
+    max-width: 1000px;
 }
 
 .calculator-box {
     background: white;
-    border-radius: 20px;
+
+    border-radius: 22px;
+
     padding: 45px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.10);
 }
 
 .calculator-header {
@@ -1959,7 +519,9 @@ footer p {
 
 .calculator-badge {
     display: inline-block;
+
     padding: 8px 16px;
+
     margin-bottom: 15px;
 
     background: #f5f2ec;
@@ -1969,24 +531,25 @@ footer p {
 
     font-size: 13px;
     font-weight: bold;
+
     letter-spacing: 1px;
 }
 
 .calculator-header h2 {
+    font-size: 35px;
     margin-bottom: 12px;
 }
 
 .calculator-header p {
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
 
     color: #666;
 }
 
-
-/* =========================================
-   ШАГИ
-========================================= */
+/* =========================================================
+   ШАГИ КАЛЬКУЛЯТОРА
+========================================================= */
 
 .calc-step {
     display: none !important;
@@ -2017,17 +580,17 @@ footer p {
     margin-bottom: 25px;
 }
 
-
-/* =========================================
-   ВАРИАНТЫ
-========================================= */
+/* =========================================================
+   ВАРИАНТЫ КАЛЬКУЛЯТОРА
+========================================================= */
 
 .calc-options {
     display: flex;
     flex-direction: column;
+
     gap: 15px;
 
-    max-width: 650px;
+    max-width: 720px;
 
     margin: 0 auto;
 }
@@ -2036,19 +599,23 @@ footer p {
     position: relative;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
-    padding: 20px;
+    padding: 22px;
 
     border: 2px solid #e5e5e5;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     background: white;
 
     cursor: pointer;
 
-    transition: 0.25s;
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
 .calc-option:hover {
@@ -2062,6 +629,7 @@ footer p {
     height: 20px;
 
     margin-right: 15px;
+    margin-top: 3px;
 
     accent-color: #c99b3b;
 
@@ -2073,7 +641,8 @@ footer p {
 
     background: #fffaf0;
 
-    box-shadow: 0 5px 15px rgba(201,155,59,0.15);
+    box-shadow:
+        0 5px 18px rgba(201, 155, 59, 0.15);
 }
 
 .option-content {
@@ -2089,93 +658,82 @@ footer p {
 
 .option-content small {
     color: #666;
-
     font-size: 14px;
 }
 
+/*
+   ЦЕНА ВАРИАНТА
+*/
+
 .option-content em {
     display: block;
-
-    margin-top: 10px;
-    padding-top: 8px;
-
-    border-top: 1px solid #eee;
 
     color: #c99b3b;
 
     font-style: normal;
 
-    font-weight: 800;
+    font-weight: bold;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    line-height: 1.4;
-}
-/* =========================================
-   ЦЕНА В КАРТОЧКЕ
-========================================= */
-
-.calc-option .option-content em {
-    letter-spacing: 0.2px;
+    margin-top: 7px;
 }
 
-.calc-option:has(input:checked)
-.option-content em {
-    font-size: 17px;
-}
-
-
-/* =========================================
-   ИЗМЕНЕНИЕ ЦЕНЫ НА ШАГАХ 2 И 3
-========================================= */
-
-.calc-option .option-content em {
-    color: #b88624;
-}
-
-
-/* =========================================
+/* =========================================================
    ПОПУЛЯРНЫЙ ВАРИАНТ
-========================================= */
+========================================================= */
 
 .calc-option.popular {
-    padding-top: 28px;
+    padding-top: 30px;
 }
 
 .popular-label {
     position: absolute;
 
     top: 0;
-    right: 15px;
+    right: 18px;
 
     transform: translateY(-50%);
 
-    padding: 5px 10px;
+    padding: 5px 11px;
 
     background: #c99b3b;
-
     color: white;
 
     border-radius: 20px;
 
     font-size: 11px;
+    font-weight: bold;
 
+    white-space: nowrap;
+}
+
+/* =========================================================
+   ЦЕНА НА 2 ШАГЕ
+========================================================= */
+
+.calc-option .option-price {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #c99b3b;
+
+    font-size: 14px;
     font-weight: bold;
 }
 
-
-/* =========================================
-   КНОПКИ
-========================================= */
+/* =========================================================
+   КНОПКИ КАЛЬКУЛЯТОРА
+========================================================= */
 
 .calc-next,
 .calc-back {
     padding: 14px 30px;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     font-size: 16px;
-
     font-weight: bold;
 
     cursor: pointer;
@@ -2191,7 +749,6 @@ footer p {
     border: none;
 
     background: #c99b3b;
-
     color: white;
 }
 
@@ -2219,7 +776,6 @@ footer p {
     border: 1px solid #ccc;
 
     background: white;
-
     color: #555;
 }
 
@@ -2227,10 +783,9 @@ footer p {
     background: #f5f5f5;
 }
 
-
-/* =========================================
-   ФИНАЛЬНЫЙ ЭКРАН
-========================================= */
+/* =========================================================
+   ФИНАЛ КАЛЬКУЛЯТОРА
+========================================================= */
 
 .final-icon {
     text-align: center;
@@ -2249,7 +804,7 @@ footer p {
 }
 
 .final-text {
-    max-width: 600px;
+    max-width: 650px;
 
     margin: 0 auto 15px;
 
@@ -2259,7 +814,7 @@ footer p {
 }
 
 .final-list {
-    max-width: 600px;
+    max-width: 650px;
 
     margin: 25px auto;
 
@@ -2271,7 +826,6 @@ footer p {
 
 .final-list div {
     display: flex;
-
     align-items: center;
 
     gap: 12px;
@@ -2297,19 +851,17 @@ footer p {
     border-radius: 50%;
 
     background: #c99b3b;
-
     color: white;
 
     font-weight: bold;
 }
 
-
-/* =========================================
-   ТЕЛЕФОН
-========================================= */
+/* =========================================================
+   ПОЛЕ ТЕЛЕФОНА
+========================================================= */
 
 #calculatorLeadForm {
-    max-width: 600px;
+    max-width: 650px;
 
     margin: 25px auto 0;
 }
@@ -2321,7 +873,7 @@ footer p {
 
     border: 1px solid #ccc;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     font-size: 17px;
 
@@ -2333,7 +885,8 @@ footer p {
 
     border-color: #c99b3b;
 
-    box-shadow: 0 0 0 3px rgba(201,155,59,0.15);
+    box-shadow:
+        0 0 0 3px rgba(201, 155, 59, 0.15);
 }
 
 .whatsapp-calc-button {
@@ -2343,14 +896,12 @@ footer p {
 
     border: none;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
-    background: #25D366;
-
+    background: #25d366;
     color: white;
 
     font-size: 16px;
-
     font-weight: bold;
 
     cursor: pointer;
@@ -2372,25 +923,606 @@ footer p {
     font-weight: bold;
 }
 
+/* =========================================================
+   НАШИ РАБОТЫ
+========================================================= */
 
-/* =========================================
+.works-subtitle {
+    color: #666;
+
+    margin-bottom: 40px;
+}
+
+.works {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.work {
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.work img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.work img:hover {
+    transform: scale(1.03);
+}
+
+.work h3 {
+    padding: 18px 18px 5px;
+
+    font-size: 20px;
+}
+
+.work-description {
+    padding: 0 18px 20px;
+
+    color: #666;
+}
+
+/* =========================================================
+   ОКНО ФОТО
+========================================================= */
+
+.image-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 3000;
+
+    inset: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.88);
+}
+
+.image-modal img {
+    max-width: 95%;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+}
+
+/* =========================================================
+   ОТЗЫВЫ
+========================================================= */
+
+.reviews {
+    background: #f5f2ec;
+
+    max-width: none;
+
+    padding-left: max(25px, calc((100% - 1000px) / 2));
+    padding-right: max(25px, calc((100% - 1000px) / 2));
+}
+
+.reviews-subtitle {
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+.review {
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.stars {
+    color: #c99b3b;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.review h3 {
+    margin-bottom: 7px;
+}
+
+.review p {
+    color: #555;
+}
+
+.review-add {
+    text-align: center;
+
+    margin-top: 35px;
+}
+
+.review-button {
+    margin-top: 12px;
+
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #c99b3b;
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.review-button:hover {
+    background: #a77e2f;
+}
+
+/* =========================================================
+   МОДАЛЬНАЯ ФОРМА ОТЗЫВА
+========================================================= */
+
+.review-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 2500;
+
+    inset: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.review-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 550px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.review-close {
+    position: absolute;
+
+    right: 20px;
+    top: 10px;
+
+    font-size: 35px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+.review-modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.review-modal-content > p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+}
+
+#reviewForm textarea {
+    resize: vertical;
+}
+
+#reviewForm input:focus,
+#reviewForm select:focus,
+#reviewForm textarea:focus {
+    outline: none;
+
+    border-color: #c99b3b;
+}
+
+.review-label {
+    font-weight: bold;
+}
+
+.review-send-button {
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #25d366;
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#reviewMessage {
+    text-align: center;
+
+    font-weight: bold;
+}
+
+/* =========================================================
+   ФОРМА ЗАКАЗА
+========================================================= */
+
+.request {
+    max-width: 750px;
+}
+
+.request > p {
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-top: 25px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+#contactForm textarea {
+    resize: vertical;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: none;
+
+    border-color: #c99b3b;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 155, 59, 0.12);
+}
+
+#contactForm button {
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #25d366;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#contactForm button:hover {
+    opacity: 0.9;
+
+    transform: translateY(-2px);
+}
+
+#formMessage {
+    text-align: center;
+
+    font-weight: bold;
+}
+
+/* =========================================================
+   КАРТА
+========================================================= */
+
+.section iframe {
+    max-width: 100%;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #222;
+
+    color: white;
+}
+
+footer .logo {
+    justify-content: center;
+
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #bbb;
+
+    margin-top: 7px;
+}
+
+/* =========================================================
+   ПЛАВАЮЩИЙ WHATSAPP
+========================================================= */
+
+.floating-whatsapp {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 2000;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: white;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.2);
+
+    transition: 0.2s;
+}
+
+.floating-whatsapp span {
+    font-size: 28px;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.08);
+}
+
+/* =========================================================
+   АДАПТАЦИЯ ДЛЯ ПЛАНШЕТА
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .header nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .cards,
+    .advantages-grid,
+    .works {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
    МОБИЛЬНАЯ ВЕРСИЯ
-========================================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
+    .section {
+        padding: 55px 15px;
+    }
+
+    .section > h2 {
+        font-size: 29px;
+    }
+
+    /* ШАПКА */
+
+    .header {
+        position: relative;
+
+        padding: 12px 15px;
+
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .phone {
+        margin-left: 0;
+
+        font-size: 13px;
+    }
+
+    .instagram-text {
+        display: none;
+    }
+
+    .header nav {
+        gap: 10px;
+    }
+
+    .header nav a {
+        font-size: 12px;
+    }
+
+    /* ГЛАВНЫЙ ЭКРАН */
+
+    .hero {
+        min-height: 560px;
+
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .call-button,
+    .whatsapp-button {
+        width: 100%;
+    }
+
+    /* КАРТОЧКИ */
+
+    .cards,
+    .advantages-grid,
+    .works {
+        grid-template-columns: 1fr;
+    }
+
+    /* О КОМПАНИИ */
+
+    .about-content {
+        gap: 30px;
+    }
+
+    /* КАЛЬКУЛЯТОР */
+
     .calculator {
-        padding: 40px 15px;
+        padding: 45px 10px;
     }
 
     .calculator-box {
-        padding: 25px 15px;
+        padding: 25px 14px;
 
-        border-radius: 15px;
+        border-radius: 16px;
     }
 
     .calculator-header h2 {
-        font-size: 27px;
+        font-size: 28px;
+    }
+
+    .calculator-header p {
+        font-size: 14px;
     }
 
     .calc-step h3 {
@@ -2398,7 +1530,7 @@ footer p {
     }
 
     .calc-option {
-        padding: 16px;
+        padding: 17px 14px;
     }
 
     .option-content strong {
@@ -2406,17 +1538,19 @@ footer p {
     }
 
     .option-content small {
-    font-size: 13px;
-}
+        font-size: 13px;
+    }
 
-.option-content em {
-    font-size: 15px;
-}
+    .option-content em {
+        font-size: 14px;
+    }
 
     .popular-label {
-        font-size: 9px;
-
         right: 8px;
+
+        font-size: 8px;
+
+        padding: 4px 7px;
     }
 
     .calc-navigation {
@@ -2431,43 +1565,36 @@ footer p {
         width: 100%;
     }
 
+    /* ФИНАЛ */
+
+    #calcFinal h3 {
+        font-size: 23px;
+    }
+
     .final-list div {
         align-items: flex-start;
     }
 
+    /* РАБОТЫ */
+
+    .work img {
+        height: 230px;
+    }
+
+    /* МОДАЛЬНОЕ ОКНО */
+
+    .review-modal-content {
+        padding: 25px 18px;
+    }
+
+    /* WHATSAPP */
+
+    .floating-whatsapp {
+        width: 55px;
+        height: 55px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+
 }
-/* =========================================
-   ЦЕНЫ НА ШАГАХ 2 И 3
-========================================= */
-
-#calcStep2 .calc-option .option-content em,
-#calcStep3 .calc-option .option-content em {
-    display: block;
-    margin-top: 10px;
-
-    color: #c99b3b;
-
-    font-size: 17px;
-    font-weight: 800;
-    font-style: normal;
-
-    line-height: 1.4;
-}
-
-
-/* Дополнительное выделение цены */
-#calcStep2 .calc-option .option-content em::before,
-#calcStep3 .calc-option .option-content em::before {
-    content: "💰 ";
-}
-
-
-/* Цена выбранного варианта */
-#calcStep2 .calc-option:has(input:checked) .option-content em,
-#calcStep3 .calc-option:has(input:checked) .option-content em {
-    color: #a77e2f;
-    font-size: 18px;
-}
-
-
-
