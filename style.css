@@ -1762,7 +1762,181 @@ footer p {
     background: #1ebe5d;
     transform: translateY(-2px);
 }
+/* =========================
+   ОТЗЫВЫ — ДОБАВЛЕНИЕ
+========================= */
 
+.reviews-subtitle {
+    text-align: center;
+    color: #666;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+.review-add {
+    background: white;
+    padding: 35px;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.review-add h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.review-add p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.review-button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    background: #c99b3b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.review-button:hover {
+    background: #a77e2f;
+}
+
+
+/* =========================
+   ОКНО ОТЗЫВА
+========================= */
+
+.review-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 6000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.75);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.review-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 550px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 35px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.review-modal-content h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.review-modal-content p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.review-modal-content input,
+.review-modal-content select,
+.review-modal-content textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.review-modal-content textarea {
+    resize: vertical;
+}
+
+.review-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.review-close {
+    position: absolute;
+
+    top: 10px;
+    right: 20px;
+
+    font-size: 40px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+.review-close:hover {
+    color: #000;
+}
+
+.review-send-button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.review-send-button:hover {
+    opacity: 0.85;
+}
+
+#reviewMessage {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
 
 
 

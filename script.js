@@ -359,3 +359,149 @@ function closeImage() {
     ).style.display = "none";
 }
 
+/* =================================
+   ОТЗЫВЫ → WHATSAPP
+================================= */
+
+function openReviewForm() {
+
+    const modal =
+        document.getElementById("reviewModal");
+
+    modal.style.display = "flex";
+
+}
+
+
+function closeReviewForm() {
+
+    const modal =
+        document.getElementById("reviewModal");
+
+    modal.style.display = "none";
+
+}
+
+
+/* Закрытие окна при клике по затемнению */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const modal =
+            document.getElementById("reviewModal");
+
+        if (
+            event.target === modal
+        ) {
+
+            closeReviewForm();
+
+        }
+
+    }
+);
+
+
+/* Отправка отзыва */
+
+const reviewForm =
+    document.getElementById("reviewForm");
+
+
+if (reviewForm) {
+
+    reviewForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document
+                    .getElementById("reviewName")
+                    .value
+                    .trim();
+
+
+            const rating =
+                document
+                    .getElementById("reviewRating")
+                    .value;
+
+
+            const text =
+                document
+                    .getElementById("reviewText")
+                    .value
+                    .trim();
+
+
+            const message =
+                document
+                    .getElementById("reviewMessage");
+
+
+            if (!name || !text) {
+
+                message.innerHTML =
+                    "❗ Заполните имя и текст отзыва.";
+
+                return;
+
+            }
+
+
+            let stars = "";
+
+            for (
+                let i = 0;
+                i < Number(rating);
+                i++
+            ) {
+
+                stars += "⭐";
+
+            }
+
+
+            const whatsappText =
+
+                "Здравствуйте! Новый отзыв с сайта BARAKAT STROY16.\n\n" +
+
+                "👤 Имя: " +
+                name +
+                "\n\n" +
+
+                "⭐ Оценка: " +
+                stars +
+                "\n\n" +
+
+                "💬 Отзыв:\n" +
+                text;
+
+
+            const whatsappUrl =
+
+                "https://wa.me/79673712725?text=" +
+
+                encodeURIComponent(
+                    whatsappText
+                );
+
+
+            message.innerHTML =
+                "💬 Открываем WhatsApp...";
+
+
+            window.open(
+                whatsappUrl,
+                "_blank"
+            );
+
+        }
+    );
+
+}

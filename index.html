@@ -654,6 +654,10 @@
 
     <h2>Отзывы клиентов</h2>
 
+    <p class="reviews-subtitle">
+        Нам важно ваше мнение. Оставьте отзыв о нашей работе.
+    </p>
+
     <div class="review">
 
         <div class="stars">
@@ -670,7 +674,6 @@
 
     </div>
 
-
     <div class="review">
 
         <div class="stars">
@@ -685,6 +688,120 @@
         </p>
 
     </div>
+
+
+    <!-- КНОПКА ДОБАВЛЕНИЯ ОТЗЫВА -->
+
+    <div class="review-add">
+
+        <h3>Хотите оставить отзыв?</h3>
+
+        <p>
+            Расскажите о качестве нашей работы.
+        </p>
+
+        <button
+            type="button"
+            class="review-button"
+            onclick="openReviewForm()"
+        >
+            ✍️ Оставить отзыв
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ФОРМА ОТЗЫВА -->
+
+<div
+    id="reviewModal"
+    class="review-modal"
+>
+
+    <div class="review-modal-content">
+
+        <span
+            class="review-close"
+            onclick="closeReviewForm()"
+        >
+            ×
+        </span>
+
+        <h2>Оставить отзыв</h2>
+
+        <p>
+            Заполните форму — отзыв будет отправлен
+            нам в WhatsApp для проверки.
+        </p>
+
+
+        <form id="reviewForm">
+
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Ваше имя"
+                required
+            >
+
+
+            <label class="review-label">
+                Ваша оценка
+            </label>
+
+            <select
+                id="reviewRating"
+                required
+            >
+
+                <option value="5">
+                    ⭐⭐⭐⭐⭐ — Отлично
+                </option>
+
+                <option value="4">
+                    ⭐⭐⭐⭐ — Хорошо
+                </option>
+
+                <option value="3">
+                    ⭐⭐⭐ — Нормально
+                </option>
+
+                <option value="2">
+                    ⭐⭐ — Плохо
+                </option>
+
+                <option value="1">
+                    ⭐ — Очень плохо
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="reviewText"
+                placeholder="Напишите ваш отзыв..."
+                rows="5"
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="review-send-button"
+            >
+                💬 Отправить отзыв в WhatsApp
+            </button>
+
+
+            <div id="reviewMessage"></div>
+
+        </form>
+
+    </div>
+
+</div>
 
 </section>
 
