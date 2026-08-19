@@ -1989,11 +1989,11 @@ footer p {
 ========================================= */
 
 .calc-step {
-    display: none;
+    display: none !important;
 }
 
 .calc-step.active {
-    display: block;
+    display: block !important;
 }
 
 .step-number {
