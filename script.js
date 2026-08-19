@@ -505,3 +505,221 @@ if (reviewForm) {
     );
 
 }
+/* =========================================
+   НОВЫЙ КАЛЬКУЛЯТОР BARAKAT STROY16
+========================================= */
+
+let calculatorData = {
+    repairClass: "",
+    bathroomType: "",
+    roomCondition: ""
+};
+
+
+/* =========================================
+   ПЕРЕХОД НА СЛЕДУЮЩИЙ ШАГ
+========================================= */
+
+function nextCalcStep(currentStep) {
+
+    if (currentStep === 1) {
+
+        const selected =
+            document.querySelector(
+                'input[name="repairClass"]:checked'
+            );
+
+        if (!selected) {
+
+            alert(
+                "Пожалуйста, выберите класс ремонта."
+            );
+
+            return;
+        }
+
+        calculatorData.repairClass =
+            selected.value;
+    }
+
+
+    if (currentStep === 2) {
+
+        const selected =
+            document.querySelector(
+                'input[name="bathroomType"]:checked'
+            );
+
+        if (!selected) {
+
+            alert(
+                "Пожалуйста, выберите тип санузла."
+            );
+
+            return;
+        }
+
+        calculatorData.bathroomType =
+            selected.value;
+    }
+
+
+    document
+        .getElementById(
+            "calcStep" + currentStep
+        )
+        .classList.remove("active");
+
+    document
+        .getElementById(
+            "calcStep" + (currentStep + 1)
+        )
+        .classList.add("active");
+
+}
+
+
+/* =========================================
+   НАЗАД
+========================================= */
+
+function prevCalcStep(currentStep) {
+
+    document
+        .getElementById(
+            "calcStep" + currentStep
+        )
+        .classList.remove("active");
+
+    document
+        .getElementById(
+            "calcStep" + (currentStep - 1)
+        )
+        .classList.add("active");
+
+}
+
+
+/* =========================================
+   ФИНАЛЬНЫЙ ЭКРАН
+========================================= */
+
+function showCalcFinal() {
+
+    const selected =
+        document.querySelector(
+            'input[name="roomCondition"]:checked'
+        );
+
+    if (!selected) {
+
+        alert(
+            "Пожалуйста, выберите состояние помещения."
+        );
+
+        return;
+    }
+
+    calculatorData.roomCondition =
+        selected.value;
+
+
+    document
+        .getElementById("calcStep3")
+        .classList.remove("active");
+
+    document
+        .getElementById("calcFinal")
+        .classList.add("active");
+
+}
+
+
+/* =========================================
+   ОТПРАВКА В WHATSAPP
+========================================= */
+
+const calculatorLeadForm =
+    document.getElementById(
+        "calculatorLeadForm"
+    );
+
+
+if (calculatorLeadForm) {
+
+    calculatorLeadForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const phone =
+                document
+                    .getElementById(
+                        "calculatorPhone"
+                    )
+                    .value
+                    .trim();
+
+
+            const messageElement =
+                document.getElementById(
+                    "calculatorMessage"
+                );
+
+
+            if (!phone) {
+
+                messageElement.innerHTML =
+                    "❗ Укажите номер телефона.";
+
+                return;
+            }
+
+
+            const whatsappMessage =
+
+                "Здравствуйте! Хочу получить расчёт стоимости ремонта у BARAKAT STROY16.%0A%0A" +
+
+                "📋 Данные клиента:%0A%0A" +
+
+                "🔹 Класс ремонта: " +
+                calculatorData.repairClass +
+                "%0A" +
+
+                "🔹 Тип санузла: " +
+                calculatorData.bathroomType +
+                "%0A" +
+
+                "🔹 Состояние помещения: " +
+                calculatorData.roomCondition +
+                "%0A" +
+
+                "📞 Телефон: " +
+                phone +
+                "%0A%0A" +
+
+                "Прошу прислать подробный расчёт стоимости работ.";
+
+
+            const whatsappUrl =
+                "https://wa.me/79673712725?text=" +
+                encodeURIComponent(
+                    whatsappMessage
+                );
+
+
+            messageElement.innerHTML =
+                "💬 Открываем WhatsApp...";
+
+
+            window.open(
+                whatsappUrl,
+                "_blank"
+            );
+
+        }
+    );
+
+}

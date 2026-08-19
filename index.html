@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="shortcut icon" href="logo.png">
+
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-    
+
+
     <title>BARAKAT STROY16 — Ремонт ванных комнат и плитка</title>
 
 <meta name="description"
@@ -404,139 +405,381 @@
 
 <section id="calculator" class="section calculator">
 
-    <h2>🧮 Калькулятор ремонта</h2>
+    <div class="calculator-box">
 
-    <p>
-        Рассчитайте предварительную стоимость ремонта ванной комнаты.
-    </p>
+        <div class="calculator-header">
 
-    <label>
-        Площадь ванной комнаты, м²
-    </label>
+            <div class="calculator-badge">
+                ⚡ БЫСТРЫЙ РАСЧЁТ
+            </div>
 
-    <input
-        type="number"
-        id="area"
-        value="5"
-        min="1"
-        placeholder="Например: 5"
-    >
+            <h2>
+                Пройдите тест за 15 секунд
+            </h2>
 
+            <p>
+                Получите предварительный расчёт стоимости
+                работ прямо в WhatsApp
+            </p>
 
-    <label>
-        Тип ремонта
-    </label>
-
-    <select id="repairType">
-
-        <option value="0">
-            Только укладка плитки
-        </option>
-
-        <option value="1">
-            Капитальный ремонт
-        </option>
-
-        <option value="2">
-            Ремонт под ключ
-        </option>
-
-    </select>
+        </div>
 
 
-    <h3 class="calc-title">
-        Дополнительные работы
-    </h3>
+        <!-- =========================
+             ШАГ 1
+        ========================= -->
+
+        <div class="calc-step active" id="calcStep1">
+
+            <div class="step-number">
+                ШАГ 1 ИЗ 3
+            </div>
+
+            <h3>
+                Выберите класс ремонта
+            </h3>
+
+            <div class="calc-options">
+
+                <label class="calc-option">
+
+                    <input
+                        type="radio"
+                        name="repairClass"
+                        value="Эконом"
+                    >
+
+                    <span class="option-content">
+
+                        <strong>
+                            🟢 ЭКОНОМ
+                        </strong>
+
+                        <small>
+                            Классическая плитка,
+                            стандартный унитаз,
+                            ровно и аккуратно
+                        </small>
+
+                        <em>
+                            Средняя цена работ:
+                            ~200 000 ₽
+                        </em>
+
+                    </span>
+
+                </label>
 
 
-    <label class="check">
+                <label class="calc-option popular">
 
-        <input
-            type="checkbox"
-            id="demolition"
-        >
+                    <span class="popular-label">
+                        ⭐ ВЫБОР 80% КЛИЕНТОВ
+                    </span>
 
-        Демонтаж старой плитки
-    </label>
+                    <input
+                        type="radio"
+                        name="repairClass"
+                        value="Комфорт"
+                    >
 
+                    <span class="option-content">
 
-    <label class="check">
+                        <strong>
+                            🔵 КОМФОРТ
+                        </strong>
 
-        <input
-            type="checkbox"
-            id="walls"
-        >
+                        <small>
+                            Керамогранит,
+                            заусовка под 45°,
+                            инсталляция, подсветка
+                        </small>
 
-        Выравнивание стен
-    </label>
+                        <em>
+                            Средняя цена работ:
+                            ~220 000–250 000 ₽
+                        </em>
 
+                    </span>
 
-    <label class="check">
+                </label>
 
-        <input
-            type="checkbox"
-            id="waterproofing"
-        >
+            </div>
 
-        Гидроизоляция
-    </label>
+            <button
+                type="button"
+                class="calc-next"
+                onclick="nextCalcStep(1)"
+            >
+                Далее →
+            </button>
 
-
-    <label class="check">
-
-        <input
-            type="checkbox"
-            id="floor"
-        >
-
-        Тёплый пол
-    </label>
-
-
-    <label class="check">
-
-        <input
-            type="checkbox"
-            id="plumbing"
-        >
-
-        Монтаж сантехники
-    </label>
+        </div>
 
 
-    <label class="check">
+        <!-- =========================
+             ШАГ 2
+        ========================= -->
 
-        <input
-            type="checkbox"
-            id="grout"
-        >
+        <div class="calc-step" id="calcStep2">
 
-        Затирка швов
-    </label>
+            <div class="step-number">
+                ШАГ 2 ИЗ 3
+            </div>
+
+            <h3>
+                Какой у вас санузел?
+            </h3>
+
+            <div class="calc-options">
+
+                <label class="calc-option">
+
+                    <input
+                        type="radio"
+                        name="bathroomType"
+                        value="Совмещенный"
+                    >
+
+                    <span class="option-content">
+                        <strong>🚿 Совмещенный</strong>
+
+                        <small>
+                            Ванная + туалет вместе
+                        </small>
+                    </span>
+
+                </label>
 
 
-    <button onclick="calculate()">
-    Рассчитать стоимость
-</button>
+                <label class="calc-option">
 
-<div id="result"></div>
+                    <input
+                        type="radio"
+                        name="bathroomType"
+                        value="Раздельный"
+                    >
 
-<button
-    id="orderCalculation"
-    onclick="sendCalculationToForm()"
-    style="display: none;"
->
-    💬 Заказать по этому расчёту
-</button>
+                    <span class="option-content">
+                        <strong>🚿🚽 Раздельный</strong>
 
-<button
-    type="button"
-    id="orderCalculation"
-    style="display:none;"
-    onclick="sendCalculationToForm()"
->
-    💬 Заказать по этому расчёту
-</button>
+                        <small>
+                            Ванная и туалет отдельно
+                        </small>
+                    </span>
+
+                </label>
+
+
+                <label class="calc-option">
+
+                    <input
+                        type="radio"
+                        name="bathroomType"
+                        value="Только ванная комната"
+                    >
+
+                    <span class="option-content">
+                        <strong>🛁 Только ванная</strong>
+                    </span>
+
+                </label>
+
+
+                <label class="calc-option">
+
+                    <input
+                        type="radio"
+                        name="bathroomType"
+                        value="Только туалет"
+                    >
+
+                    <span class="option-content">
+                        <strong>🚽 Только туалет</strong>
+                    </span>
+
+                </label>
+
+            </div>
+
+            <div class="calc-navigation">
+
+                <button
+                    type="button"
+                    class="calc-back"
+                    onclick="prevCalcStep(2)"
+                >
+                    ← Назад
+                </button>
+
+                <button
+                    type="button"
+                    class="calc-next"
+                    onclick="nextCalcStep(2)"
+                >
+                    Далее →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ШАГ 3
+        ========================= -->
+
+        <div class="calc-step" id="calcStep3">
+
+            <div class="step-number">
+                ШАГ 3 ИЗ 3
+            </div>
+
+            <h3>
+                В каком состоянии помещение?
+            </h3>
+
+            <div class="calc-options">
+
+                <label class="calc-option">
+
+                    <input
+                        type="radio"
+                        name="roomCondition"
+                        value="Вторичка"
+                    >
+
+                    <span class="option-content">
+
+                        <strong>
+                            🏠 Вторичка
+                        </strong>
+
+                        <small>
+                            Нужен демонтаж старой
+                            плитки и труб
+                        </small>
+
+                    </span>
+
+                </label>
+
+
+                <label class="calc-option">
+
+                    <input
+                        type="radio"
+                        name="roomCondition"
+                        value="Новостройка"
+                    >
+
+                    <span class="option-content">
+
+                        <strong>
+                            🏗️ Новостройка
+                        </strong>
+
+                        <small>
+                            Стены голые,
+                            бетон / штукатурка
+                        </small>
+
+                    </span>
+
+                </label>
+
+            </div>
+
+            <div class="calc-navigation">
+
+                <button
+                    type="button"
+                    class="calc-back"
+                    onclick="prevCalcStep(3)"
+                >
+                    ← Назад
+                </button>
+
+                <button
+                    type="button"
+                    class="calc-next"
+                    onclick="showCalcFinal()"
+                >
+                    Получить расчёт →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ФИНАЛ
+        ========================= -->
+
+        <div class="calc-step" id="calcFinal">
+
+            <div class="final-icon">
+                📊
+            </div>
+
+            <h3>
+                Спасибо! Данные приняты.
+            </h3>
+
+            <p class="final-text">
+                Я уже рассчитываю подробную смету
+                на работы по вашим параметрам.
+            </p>
+
+            <p class="final-text">
+                📲 Укажите ваш номер, и я лично
+                пришлю вам в WhatsApp:
+            </p>
+
+            <div class="final-list">
+
+                <div>
+                    <span>1</span>
+                    Точный расчёт стоимости работ
+                </div>
+
+                <div>
+                    <span>2</span>
+                    Детальный прайс-лист
+                </div>
+
+                <div>
+                    <span>3</span>
+                    Видео-обзор похожего готового объекта
+                </div>
+
+            </div>
+
+
+            <form id="calculatorLeadForm">
+
+                <input
+                    type="tel"
+                    id="calculatorPhone"
+                    placeholder="Ваш телефон / WhatsApp"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="whatsapp-calc-button"
+                >
+                    💬 ПОЛУЧИТЬ РАСЧЁТ В WHATSAPP
+                </button>
+
+            </form>
+
+            <div id="calculatorMessage"></div>
+
+        </div>
+
+    </div>
 
 </section>
 

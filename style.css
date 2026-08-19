@@ -1762,7 +1762,6 @@ footer p {
     background: #1ebe5d;
     transform: translateY(-2px);
 }
-
 /* =========================
    ОТЗЫВЫ — ДОБАВЛЕНИЕ
 ========================= */
@@ -1938,6 +1937,473 @@ footer p {
     margin-top: 15px;
     font-weight: bold;
 }
+/* =========================================
+   НОВЫЙ КАЛЬКУЛЯТОР — BARAKAT STROY16
+========================================= */
 
+.calculator {
+    max-width: 900px;
+}
+
+.calculator-box {
+    background: white;
+    border-radius: 20px;
+    padding: 45px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+}
+
+.calculator-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.calculator-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-bottom: 15px;
+
+    background: #f5f2ec;
+    color: #c99b3b;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.calculator-header h2 {
+    margin-bottom: 12px;
+}
+
+.calculator-header p {
+    max-width: 600px;
+    margin: auto;
+
+    color: #666;
+}
+
+
+/* =========================================
+   ШАГИ
+========================================= */
+
+.calc-step {
+    display: none;
+}
+
+.calc-step.active {
+    display: block;
+}
+
+.step-number {
+    text-align: center;
+
+    margin-bottom: 12px;
+
+    color: #c99b3b;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.calc-step h3 {
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   ВАРИАНТЫ
+========================================= */
+
+.calc-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.calc-option {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px;
+
+    border: 2px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    background: white;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.calc-option:hover {
+    border-color: #c99b3b;
+
+    transform: translateY(-2px);
+}
+
+.calc-option input {
+    width: 20px;
+    height: 20px;
+
+    margin-right: 15px;
+
+    accent-color: #c99b3b;
+
+    flex-shrink: 0;
+}
+
+.calc-option:has(input:checked) {
+    border-color: #c99b3b;
+
+    background: #fffaf0;
+
+    box-shadow: 0 5px 15px rgba(201,155,59,0.15);
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.option-content strong {
+    font-size: 18px;
+}
+
+.option-content small {
+    color: #666;
+
+    font-size: 14px;
+}
+
+.option-content em {
+    color: #c99b3b;
+
+    font-style: normal;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   ПОПУЛЯРНЫЙ ВАРИАНТ
+========================================= */
+
+.calc-option.popular {
+    padding-top: 28px;
+}
+
+.popular-label {
+    position: absolute;
+
+    top: 0;
+    right: 15px;
+
+    transform: translateY(-50%);
+
+    padding: 5px 10px;
+
+    background: #c99b3b;
+
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   КНОПКИ
+========================================= */
+
+.calc-next,
+.calc-back {
+    padding: 14px 30px;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.calc-next {
+    display: block;
+
+    margin: 30px auto 0;
+
+    border: none;
+
+    background: #c99b3b;
+
+    color: white;
+}
+
+.calc-next:hover {
+    background: #a77e2f;
+
+    transform: translateY(-2px);
+}
+
+.calc-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.calc-navigation .calc-next {
+    margin: 0;
+}
+
+.calc-back {
+    border: 1px solid #ccc;
+
+    background: white;
+
+    color: #555;
+}
+
+.calc-back:hover {
+    background: #f5f5f5;
+}
+
+
+/* =========================================
+   ФИНАЛЬНЫЙ ЭКРАН
+========================================= */
+
+.final-icon {
+    text-align: center;
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+#calcFinal h3 {
+    font-size: 28px;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+.final-text {
+    max-width: 600px;
+
+    margin: 0 auto 15px;
+
+    text-align: center;
+
+    color: #555;
+}
+
+.final-list {
+    max-width: 600px;
+
+    margin: 25px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.final-list div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 15px;
+
+    background: #f5f2ec;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+.final-list span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #c99b3b;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   ТЕЛЕФОН
+========================================= */
+
+#calculatorLeadForm {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+}
+
+#calculatorPhone {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+#calculatorPhone:focus {
+    outline: none;
+
+    border-color: #c99b3b;
+
+    box-shadow: 0 0 0 3px rgba(201,155,59,0.15);
+}
+
+.whatsapp-calc-button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.whatsapp-calc-button:hover {
+    opacity: 0.9;
+
+    transform: translateY(-2px);
+}
+
+#calculatorMessage {
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================================= */
+
+@media (max-width: 600px) {
+
+    .calculator {
+        padding: 40px 15px;
+    }
+
+    .calculator-box {
+        padding: 25px 15px;
+
+        border-radius: 15px;
+    }
+
+    .calculator-header h2 {
+        font-size: 27px;
+    }
+
+    .calc-step h3 {
+        font-size: 23px;
+    }
+
+    .calc-option {
+        padding: 16px;
+    }
+
+    .option-content strong {
+        font-size: 16px;
+    }
+
+    .option-content small,
+    .option-content em {
+        font-size: 13px;
+    }
+
+    .popular-label {
+        font-size: 9px;
+
+        right: 8px;
+    }
+
+    .calc-navigation {
+        flex-direction: column-reverse;
+    }
+
+    .calc-navigation button {
+        width: 100%;
+    }
+
+    .calc-next {
+        width: 100%;
+    }
+
+    .final-list div {
+        align-items: flex-start;
+    }
+
+}
 
 
