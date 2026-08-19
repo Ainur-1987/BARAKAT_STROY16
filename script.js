@@ -506,13 +506,14 @@ if (reviewForm) {
 
 }
 /* =========================================
-   НОВЫЙ КАЛЬКУЛЯТОР BARAKAT STROY16
+   КАЛЬКУЛЯТОР BARAKAT STROY16
 ========================================= */
 
 let calculatorData = {
     repairClass: "",
     bathroomType: "",
-    roomCondition: ""
+    roomCondition: "",
+    price: 0
 };
 
 
@@ -570,6 +571,7 @@ function nextCalcStep(currentStep) {
         )
         .classList.remove("active");
 
+
     document
         .getElementById(
             "calcStep" + (currentStep + 1)
@@ -591,6 +593,7 @@ function prevCalcStep(currentStep) {
         )
         .classList.remove("active");
 
+
     document
         .getElementById(
             "calcStep" + (currentStep - 1)
@@ -601,7 +604,7 @@ function prevCalcStep(currentStep) {
 
 
 /* =========================================
-   ФИНАЛЬНЫЙ ЭКРАН
+   РАСЧЁТ И ФИНАЛЬНЫЙ ЭКРАН
 ========================================= */
 
 function showCalcFinal() {
@@ -610,6 +613,7 @@ function showCalcFinal() {
         document.querySelector(
             'input[name="roomCondition"]:checked'
         );
+
 
     if (!selected) {
 
@@ -620,13 +624,127 @@ function showCalcFinal() {
         return;
     }
 
+
     calculatorData.roomCondition =
         selected.value;
 
 
+    /* =========================
+       БАЗОВАЯ ЦЕНА
+    ========================= */
+
+    let price = 0;
+
+
+    if (calculatorData.repairClass === "Эконом") {
+
+        price = 200000;
+
+    }
+
+
+    if (calculatorData.repairClass === "Комфорт") {
+
+        price = 220000;
+
+    }
+
+
+    /* =========================
+       ТИП САНУЗЛА
+    ========================= */
+
+    if (
+        calculatorData.bathroomType ===
+        "Раздельный"
+    ) {
+
+        price += 30000;
+
+    }
+
+
+    if (
+        calculatorData.bathroomType ===
+        "Только ванная комната"
+    ) {
+
+        price -= 20000;
+
+    }
+
+
+    if (
+        calculatorData.bathroomType ===
+        "Только туалет"
+    ) {
+
+        price -= 80000;
+
+    }
+
+
+    /* =========================
+       СОСТОЯНИЕ ПОМЕЩЕНИЯ
+    ========================= */
+
+    if (
+        calculatorData.roomCondition ===
+        "Вторичка"
+    ) {
+
+        price += 20000;
+
+    }
+
+
+    /*
+       Новостройка = +0 ₽
+       Поэтому здесь ничего
+       добавлять не нужно.
+    */
+
+
+    calculatorData.price = price;
+
+
+    /* =========================
+       ПОКАЗЫВАЕМ РЕЗУЛЬТАТ
+    ========================= */
+
+    document.getElementById(
+        "resultClass"
+    ).textContent =
+        calculatorData.repairClass;
+
+
+    document.getElementById(
+        "resultBathroom"
+    ).textContent =
+        calculatorData.bathroomType;
+
+
+    document.getElementById(
+        "resultCondition"
+    ).textContent =
+        calculatorData.roomCondition;
+
+
+    document.getElementById(
+        "resultPrice"
+    ).textContent =
+        price.toLocaleString("ru-RU") +
+        " ₽";
+
+
+    /* =========================
+       ПЕРЕХОД НА ФИНАЛ
+    ========================= */
+
     document
         .getElementById("calcStep3")
         .classList.remove("active");
+
 
     document
         .getElementById("calcFinal")
@@ -636,7 +754,7 @@ function showCalcFinal() {
 
 
 /* =========================================
-   ОТПРАВКА В WHATSAPP
+   ОТПРАВКА РАСЧЁТА В WHATSAPP
 ========================================= */
 
 const calculatorLeadForm =
@@ -675,36 +793,47 @@ if (calculatorLeadForm) {
                     "❗ Укажите номер телефона.";
 
                 return;
+
             }
 
 
+            /* =========================
+               ФОРМИРУЕМ СООБЩЕНИЕ
+            ========================= */
+
             const whatsappMessage =
 
-                "Здравствуйте! Хочу получить расчёт стоимости ремонта у BARAKAT STROY16.%0A%0A" +
+                "Здравствуйте! Хочу получить точный расчёт стоимости ремонта у BARAKAT STROY16.\n\n" +
 
-                "📋 Данные клиента:%0A%0A" +
+                "📊 Предварительный расчёт стоимости работ:\n\n" +
 
                 "🔹 Класс ремонта: " +
                 calculatorData.repairClass +
-                "%0A" +
+                "\n" +
 
-                "🔹 Тип санузла: " +
+                "🔹 Санузел: " +
                 calculatorData.bathroomType +
-                "%0A" +
+                "\n" +
 
                 "🔹 Состояние помещения: " +
                 calculatorData.roomCondition +
-                "%0A" +
+                "\n\n" +
 
-                "📞 Телефон: " +
+                "💰 Ориентировочная сумма работ: " +
+                calculatorData.price.toLocaleString("ru-RU") +
+                " ₽\n\n" +
+
+                "📞 Телефон / WhatsApp: " +
                 phone +
-                "%0A%0A" +
+                "\n\n" +
 
-                "Прошу прислать подробный расчёт стоимости работ.";
+                "🎁 Хочу получить подробный прайс-лист и зафиксировать скидку 10%.";
 
 
             const whatsappUrl =
+
                 "https://wa.me/79673712725?text=" +
+
                 encodeURIComponent(
                     whatsappMessage
                 );
