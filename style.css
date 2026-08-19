@@ -2436,5 +2436,38 @@ footer p {
     }
 
 }
+/* =========================================
+   ЦЕНЫ НА ШАГАХ 2 И 3
+========================================= */
+
+#calcStep2 .calc-option .option-content em,
+#calcStep3 .calc-option .option-content em {
+    display: block;
+    margin-top: 10px;
+
+    color: #c99b3b;
+
+    font-size: 17px;
+    font-weight: 800;
+    font-style: normal;
+
+    line-height: 1.4;
+}
+
+
+/* Дополнительное выделение цены */
+#calcStep2 .calc-option .option-content em::before,
+#calcStep3 .calc-option .option-content em::before {
+    content: "💰 ";
+}
+
+
+/* Цена выбранного варианта */
+#calcStep2 .calc-option:has(input:checked) .option-content em,
+#calcStep3 .calc-option:has(input:checked) .option-content em {
+    color: #a77e2f;
+    font-size: 18px;
+}
+
 
 
