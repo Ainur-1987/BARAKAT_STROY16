@@ -2094,15 +2094,43 @@ footer p {
 }
 
 .option-content em {
+    display: block;
+
+    margin-top: 10px;
+    padding-top: 8px;
+
+    border-top: 1px solid #eee;
+
     color: #c99b3b;
 
     font-style: normal;
 
-    font-weight: bold;
+    font-weight: 800;
 
-    font-size: 14px;
+    font-size: 16px;
 
-    margin-top: 5px;
+    line-height: 1.4;
+}
+/* =========================================
+   ЦЕНА В КАРТОЧКЕ
+========================================= */
+
+.calc-option .option-content em {
+    letter-spacing: 0.2px;
+}
+
+.calc-option:has(input:checked)
+.option-content em {
+    font-size: 17px;
+}
+
+
+/* =========================================
+   ИЗМЕНЕНИЕ ЦЕНЫ НА ШАГАХ 2 И 3
+========================================= */
+
+.calc-option .option-content em {
+    color: #b88624;
 }
 
 
@@ -2377,10 +2405,13 @@ footer p {
         font-size: 16px;
     }
 
-    .option-content small,
-    .option-content em {
-        font-size: 13px;
-    }
+    .option-content small {
+    font-size: 13px;
+}
+
+.option-content em {
+    font-size: 15px;
+}
 
     .popular-label {
         font-size: 9px;
