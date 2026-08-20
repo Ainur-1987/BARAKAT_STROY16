@@ -2405,5 +2405,29 @@ footer p {
     }
 
 }
+/* Instagram на мобильных устройствах */
+
+.instagram {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.instagram a {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.instagram-text {
+    display: inline !important;
+}
+
+.instagram-icon {
+    display: inline-block !important;
+}
+
 
 
