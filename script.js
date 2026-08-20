@@ -189,7 +189,7 @@ function sendCalculationToForm() {
 
 
     let text =
-        "Хочу заказать ремонт по расчёту BARAKAT STROY16.\n\n";
+        "Хочу заказать ремонт по расчёту MIZAN STROY.\n\n";
 
 
     text +=
@@ -299,7 +299,7 @@ if (form) {
 
 
             const whatsappText =
-                "Здравствуйте! Хочу заказать ремонт у BARAKAT STROY16.\n\n" +
+                "Здравствуйте! Хочу заказать ремонт у MIZAN STROY.\n\n" +
 
                 "👤 Имя: " +
                 name +
@@ -469,7 +469,7 @@ if (reviewForm) {
 
             const whatsappText =
 
-                "Здравствуйте! Новый отзыв с сайта BARAKAT STROY16.\n\n" +
+                "Здравствуйте! Новый отзыв с сайта BMIZAN STROY.\n\n" +
 
                 "👤 Имя: " +
                 name +
@@ -506,7 +506,7 @@ if (reviewForm) {
 
 }
 /* =========================================
-   КАЛЬКУЛЯТОР BARAKAT STROY16
+   КАЛЬКУЛЯТОР MIZAN STROY
 ========================================= */
 
 let calculatorData = {
@@ -803,7 +803,7 @@ if (calculatorLeadForm) {
 
             const whatsappMessage =
 
-                "Здравствуйте! Хочу получить точный расчёт стоимости ремонта у BARAKAT STROY16.\n\n" +
+                "Здравствуйте! Хочу получить точный расчёт стоимости ремонта у MIZAN STROY.\n\n" +
 
                 "📊 Предварительный расчёт стоимости работ:\n\n" +
 
