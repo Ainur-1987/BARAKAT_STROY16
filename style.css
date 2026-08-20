@@ -2428,6 +2428,52 @@ footer p {
 .instagram-icon {
     display: inline-block !important;
 }
+/* =========================================
+   INSTAGRAM — МОБИЛЬНАЯ ВЕРСИЯ
+========================================= */
+
+.mobile-instagram-button {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .mobile-instagram-button {
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        width: calc(100% - 30px);
+
+        margin: 10px auto 15px;
+
+        padding: 12px 20px;
+
+        box-sizing: border-box;
+
+        border-radius: 8px;
+
+        background: #c99b3b;
+
+        color: white !important;
+
+        text-decoration: none !important;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        position: relative;
+
+        z-index: 9999;
+    }
+
+    .mobile-instagram-button:hover {
+        opacity: 0.9;
+    }
+}
 
 
 
