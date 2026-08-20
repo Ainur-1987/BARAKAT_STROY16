@@ -1,5 +1,5 @@
 /* =========================================
-   BARAKAT STROY16
+   MIZAN STROY
    ПРОФЕССИОНАЛЬНЫЙ ДИЗАЙН
 ========================================= */
 
@@ -2405,28 +2405,112 @@ footer p {
     }
 
 }
-/* Instagram на мобильных устройствах */
-
-.instagram {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
+/* =========================================
+   INSTAGRAM — MIZAN STROY
+========================================= */
 
 .instagram a {
-    display: flex !important;
+    display: flex;
     align-items: center;
     gap: 8px;
-    visibility: visible !important;
-    opacity: 1 !important;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.instagram-text {
-    display: inline !important;
+.instagram a:hover {
+    color: var(--gold);
 }
 
 .instagram-icon {
-    display: inline-block !important;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #e1306c;
+    border-radius: 8px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.instagram-camera {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border: 2px solid #e1306c;
+    border-radius: 50%;
+    left: 6px;
+    top: 6px;
+}
+
+.instagram-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #e1306c;
+    border-radius: 50%;
+    right: 4px;
+    top: 4px;
+}
+
+.instagram a:hover .instagram-icon {
+    transform: scale(1.12) rotate(5deg);
+}
+
+
+/* =========================================
+   INSTAGRAM — МОБИЛЬНАЯ КНОПКА
+========================================= */
+
+.mobile-instagram-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .mobile-instagram-button {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: calc(100% - 30px);
+
+        margin: 10px auto 15px;
+
+        padding: 13px 20px;
+
+        background: linear-gradient(
+            135deg,
+            #c99b3b,
+            #a77e2f
+        );
+
+        color: white !important;
+
+        text-decoration: none !important;
+
+        border-radius: 8px;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        box-shadow:
+            0 5px 15px rgba(0,0,0,0.15);
+
+        transition: 0.3s;
+
+        position: relative;
+        z-index: 999;
+    }
+
+    .mobile-instagram-button:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(0,0,0,0.2);
+    }
+
 }
 /* =========================================
    INSTAGRAM — МОБИЛЬНАЯ ВЕРСИЯ
