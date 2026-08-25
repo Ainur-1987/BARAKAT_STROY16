@@ -2589,5 +2589,85 @@ footer p {
         display: none !important;
     }
 }
+/* =========================================
+   INSTAGRAM — MIZAN STROY
+========================================= */
+
+.instagram {
+    display: flex;
+    align-items: center;
+}
+
+.instagram a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 8px 12px;
+
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.05);
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.instagram-logo {
+    width: 26px;
+    height: 26px;
+
+    display: block;
+
+    color: #E1306C;
+
+    transition: 0.3s;
+}
+
+.instagram a:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: #c99b3b;
+}
+
+.instagram a:hover .instagram-logo {
+    transform: scale(1.1);
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================================= */
+
+@media (max-width: 700px) {
+
+    .instagram {
+        display: flex !important;
+
+        order: 3;
+    }
+
+    .instagram a {
+        padding: 7px 12px;
+
+        min-height: 40px;
+    }
+
+    .instagram-logo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .instagram-text {
+        display: inline !important;
+        font-size: 13px;
+    }
+}
 
 
