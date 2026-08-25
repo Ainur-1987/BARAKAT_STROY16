@@ -2456,5 +2456,86 @@ footer p {
 .instagram a:hover .instagram-icon {
     transform: scale(1.12) rotate(5deg);
 }
+/* =========================================
+   INSTAGRAM — МОБИЛЬНАЯ КНОПКА
+========================================= */
+
+.mobile-instagram-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .mobile-instagram-button {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+
+        width: calc(100% - 30px);
+        margin: 10px auto 15px;
+        padding: 11px 20px;
+
+        box-sizing: border-box;
+
+        background: #c99b3b;
+        color: #fff !important;
+
+        border-radius: 8px;
+
+        text-decoration: none !important;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        position: relative;
+        z-index: 9999;
+    }
+
+    /* Иконка Instagram */
+    .mobile-instagram-icon {
+        width: 20px;
+        height: 20px;
+
+        border: 2px solid #fff;
+        border-radius: 6px;
+
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .mobile-instagram-icon::before {
+        content: "";
+        position: absolute;
+
+        width: 7px;
+        height: 7px;
+
+        border: 2px solid #fff;
+        border-radius: 50%;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .mobile-instagram-dot {
+        position: absolute;
+
+        width: 3px;
+        height: 3px;
+
+        background: #fff;
+        border-radius: 50%;
+
+        right: 3px;
+        top: 3px;
+    }
+
+    .mobile-instagram-button:hover {
+        opacity: 0.9;
+    }
+}
 
 
